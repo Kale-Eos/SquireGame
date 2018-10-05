@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // magic shit
+    // public Rigidbody2D mybody;
+
     //Sets character speed
     public float horizontalSpeed = 5f;
 
@@ -17,15 +20,22 @@ public class PlayerController : MonoBehaviour
     //Sets up for the flip codes
     private bool facingRight;
 
+    // sets TriggerDoor object
+    public GameObject TriggerDoor;
+
+
     // Use this for initialization
-    void Start ()
+    void Start()
     {
+        // accesses the juice
+        // mybody = GetComponent<Rigidbody2D>();
+
         //Indicates that the player is facing right from the start.
         facingRight = true;
-	}
-   
+    }
+
     // Update is called once per frame
-    void Update ()
+    void Update()
     {
         //Code to check if grounded
         isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.5f, transform.position.y - 0.5f),
@@ -38,17 +48,23 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-	// Update is called once per frame
-	void FixedUpdate ()
+    // Update is called once per frame
+    void FixedUpdate()
     {
         //Code for character movement
         float horizontalInput = Input.GetAxisRaw("Horizontal");
-        transform.position = transform.position + new Vector3(horizontalInput * horizontalSpeed* Time.deltaTime, 0, 0);
+        transform.position = transform.position + new Vector3(horizontalInput * horizontalSpeed * Time.deltaTime, 0, 0);
+
+        // ...replaces chimichangas
+        // Vector2 movement = new Vector3(horizontalInput, horizontalInput, horizontalInput);
+
+        // with stuff and shit...
+        // mybody.MovePosition(mybody.position + movement * horizontalSpeed * Time.deltaTime);
 
         //Calls the flip function
         Flip(horizontalInput);
     }
-    
+
     //Flipping character code
     private void Flip(float horizontalInput)
     {
@@ -63,9 +79,23 @@ public class PlayerController : MonoBehaviour
 
             //set x in theScale to -1
             theScale.x *= -1;
-           
+
             //added theScale to the player's scale
             transform.localScale = theScale;
+        }
+    }
+
+    // sets the collision for Squire
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // targests only PickUps
+        if (other.gameObject.CompareTag("PickUps"))
+        {
+            // PickUp is destroyed and makes sound
+            other.gameObject.SetActive(false);
+
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
         }
     }
 }
