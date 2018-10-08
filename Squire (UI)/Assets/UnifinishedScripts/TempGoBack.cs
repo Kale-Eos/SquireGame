@@ -7,8 +7,8 @@ public class TempGoBack : MonoBehaviour {
 
     public void BackToMainMenu ()
     {
-        // Reverses the the scene change to go back one scene
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        // Reverses the the scene change to go back to Title Scene
+        SceneManager.LoadScene("Title Scene");
     }
 
 }
