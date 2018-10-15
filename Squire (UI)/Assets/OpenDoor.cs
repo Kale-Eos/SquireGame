@@ -35,8 +35,8 @@ public class OpenDoor : MonoBehaviour {
 			/* Removes Jiren */
 
 		}
-		/*Happens when Jiren is defeated */
-		if(jirenDefeated){
+        /*Happens when Jiren is defeated */
+        if (jirenDefeated){
 			/* door opens */
 		}
 	}
