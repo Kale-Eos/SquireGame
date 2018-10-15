@@ -51,17 +51,23 @@ public class PlayerControllerV2: MonoBehaviour
         isWithinRange = Physics2D.OverlapArea(new Vector2(transform.position.x - 1.0f, transform.position.y - 1.0f),
             new Vector2(transform.position.x + 1.0f, transform.position.y + 1.0f), pickUpLayer);
 
-        //Code for pickup
+        //Code for pickup; also allows jumping on the interactable object.
         if (Input.GetButtonDown("Interaction") && isWithinRange)
         {
             Destroy(interactedObject);
         }
+        else if (Input.GetButtonDown("Jump") && isWithinRange)
+        {
+            GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpVelocity;
+        }
+        
 
         //Code for character jump
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpVelocity;
         }
+        
     }
 
     // Update is called once per frame
