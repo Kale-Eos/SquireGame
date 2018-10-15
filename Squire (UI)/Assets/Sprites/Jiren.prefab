@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 212025496389509558}
   - component: {fileID: 61872823536076176}
   - component: {fileID: 50206523753058814}
-  - component: {fileID: 114563357430930664}
   m_Layer: 0
   m_Name: Jiren
   m_TagString: Pickups
@@ -88,17 +87,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9, y: 12}
   m_EdgeRadius: 0
---- !u!114 &114563357430930664
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1156632202513914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a053f21ddcecea45b8dd709e80b4476, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212025496389509558
 SpriteRenderer:
   m_ObjectHideFlags: 1
