@@ -1,43 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OpenDoor : MonoBehaviour {
 
     public GameObject TriggerDoor;
     public GameObject Jiren;
 	public GameObject Squire;
-	public BoxCollider2D SquireBoxCollider;
+	public GameObject InvisibleDoor;
+	public CompositeCollider2D SquireBoxCollider;
+	public CompositeCollider2D InvisibleDoorCollider;
 	public BoxCollider2D JirenBoxCollider;
-	/* In the beginning Jiren isn't defeated yet. */
-	bool jirenDefeated = false;
-
-	/* Checks if the box collider of the squire meets the box colldier of Jiren */
-	bool BoxCollidersCheck (){
-		// Happens if the box collider for the player meets with Jiren's box collider 
-		if(SquireBoxCollider.IsTouching(JirenBoxCollider)) {
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
-	void OnCollisionEnter(Collision collision) {
-		if(collision.gameObject.tag == "Jiren") {
-			Destroy(collision.gameObject);
-		}
-	}
+	public BoxCollider2D TriggerDoorBoxCollider;
 
 	void Update() {
-		/*Checks to see if Jiren is defeated */
-		if(BoxCollidersCheck()){
-			jirenDefeated = true;
-			/* Removes Jiren */
-
+		if (!GameObject.Find("Jiren")) {
+			Destroy(InvisibleDoor);
 		}
-        /*Happens when Jiren is defeated */
-        if (jirenDefeated){
-			/* door opens */
+	}
+
+
+	// void OnTriggerEnter2D(Collider2D collision) {
+		/* happens when the squire collides with the TriggerDoor */
+		//if (collision.gameObject.name == "TriggerDoor") {
+			/* New scene in loaded */
+			//Debug.Log ("TriggeredDoor was touched");
+			//SceneManager.LoadScene(0);
+		//}
+	//} 
+	void OnCollisionEnter2D(Collision2D collision) {
+		if (collision.gameObject.name == "TriggerDoor") {
+			/* New scene in loaded */
+			Debug.Log ("TriggeredDoor was touched");
+			SceneManager.LoadScene(0);
 		}
 	}
 }
