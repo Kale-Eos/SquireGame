@@ -34,7 +34,7 @@ public class MainMenu : MonoBehaviour {
     public void PlayTutorial()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);       // loads onto the tutorial scene
-        
+        audioManager.PlaySound("Tutorial_BGM");
     }
 
     public void PlayLevel1()
