@@ -44,8 +44,8 @@ public class PlayerControllerV2: MonoBehaviour
     void Update()
     {
         //Code to check if grounded
-        isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.5f, transform.position.y - 0.5f),
-            new Vector2(transform.position.x + 0.5f, transform.position.y - 0.51f), groundLayer);
+        isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 2f, transform.position.y - 3f),           // controls range of ground to player
+            new Vector2(transform.position.x + 0.5f, transform.position.y - 0.51f), groundLayer);                       // controls jump height
 
         //Code to check if squire is within range to pickup item
         isWithinRange = Physics2D.OverlapArea(new Vector2(transform.position.x - 1.0f, transform.position.y - 1.0f),

@@ -103,5 +103,8 @@ public class AudioManager : MonoBehaviour
         Debug.LogWarning("AudioManager: Sound ~" + _name + "~ not found in library");
 
         StopSound("Music");
+        StopSound("Tutorial_BGM");
+        StopSound("Level1_BGM");
+        StopSound("Level2_BGM");
     }
 }
