@@ -29,10 +29,18 @@ public class PlayerControllerV2: MonoBehaviour
     //Set the desired interactable object to "Interacted Object" in the inspector
     public GameObject interactedObject;
 
+    AudioManager audioManager;      // audio manager is now accessed
 
     // Use this for initialization
     void Start()
     {
+
+        audioManager = AudioManager.instance;               // instantiates AudioManager
+        if (audioManager == null)
+        {
+            Debug.LogError("No AudioManager Found");
+        }
+
         // accesses the juice
         // mybody = GetComponent<Rigidbody2D>();
 
@@ -44,7 +52,7 @@ public class PlayerControllerV2: MonoBehaviour
     void Update()
     {
         //Code to check if grounded
-        isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 2f, transform.position.y - 3f),           // controls range of ground to player
+        isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.75f, transform.position.y - 2.5f),      // controls range of ground to player
             new Vector2(transform.position.x + 0.5f, transform.position.y - 0.51f), groundLayer);                       // controls jump height
 
         //Code to check if squire is within range to pickup item
@@ -116,8 +124,7 @@ public class PlayerControllerV2: MonoBehaviour
             // PickUp is destroyed and makes sound
             other.gameObject.SetActive(false);
 
-            AudioSource audio = GetComponent<AudioSource>();
-            audio.Play();
+            audioManager.PlaySound("PickupSound");      // plays PickupSound.wav
         }
     }
 }

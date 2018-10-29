@@ -34,28 +34,28 @@ public class MainMenu : MonoBehaviour {
     public void PlayTutorial()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);       // loads onto the tutorial scene
-        audioManager.PlaySound("Tutorial_BGM");
-        audioManager.StopSound("Music");
+        audioManager.PlaySound("Tutorial_BGM");                                     // Plays Tutorial_BGM
+        audioManager.StopSound("Music");                                            // stops main menu music
     }
 
     public void PlayLevel1()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);       // loads onto the Level 1 scene
-        audioManager.PlaySound("Level1_BGM");
-        audioManager.StopSound("Music");
+        audioManager.PlaySound("Level1_BGM");                                       // Plays Level1_BGM
+        audioManager.StopSound("Music");                                            // Stops main menu music
     }
 
     public void PlayLevel2()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);       // loads onto the Level 2 scene
-        audioManager.PlaySound("Level2_BGM");
-        audioManager.StopSound("Music");
+        audioManager.PlaySound("Level2_BGM");                                       // Plays Level2_BGM
+        audioManager.StopSound("Music");                                            // Stop main menu music
     }
 
     public void BackToMainMenu()
     {
         SceneManager.LoadScene("Title Scene");      // Reverses the the scene change to go back to Title Scene
-        audioManager.PlaySound("Music");
+        audioManager.PlaySound("Music");            // Restarts main menu music
     }
 
     public void QuitGame ()

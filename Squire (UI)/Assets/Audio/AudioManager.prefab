@@ -9,17 +9,17 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1878512925374178}
+  m_RootGameObject: {fileID: 1160501220298136}
   m_IsPrefabAsset: 1
---- !u!1 &1878512925374178
+--- !u!1 &1160501220298136
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4825485889094224}
-  - component: {fileID: 114753097553206752}
+  - component: {fileID: 4491204278807632}
+  - component: {fileID: 114283454551585428}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Music
@@ -27,12 +27,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4825485889094224
+--- !u!4 &4491204278807632
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1878512925374178}
+  m_GameObject: {fileID: 1160501220298136}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,12 +40,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114753097553206752
+--- !u!114 &114283454551585428
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1878512925374178}
+  m_GameObject: {fileID: 1160501220298136}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5db53f7171fef644fb6b83f4eb549717, type: 3}
@@ -54,28 +54,28 @@ MonoBehaviour:
   sounds:
   - name: ButtonHover
     clip: {fileID: 8300000, guid: 216f0b74888d07948be0435ba39e350b, type: 3}
-    volume: 0.9
+    volume: 0.2
     pitch: 1
-    RandomVolume: 0.1
-    RandomPitch: 0.1
+    RandomVolume: 0
+    RandomPitch: 0.5
     loop: 0
   - name: ButtonPress
-    clip: {fileID: 8300000, guid: 6af09ebc031f8eb4e933ffc61e46f594, type: 3}
-    volume: 0.3
+    clip: {fileID: 8300000, guid: bbb40799c6441e74e9542faab1a42419, type: 3}
+    volume: 0.2
     pitch: 1
     RandomVolume: 0
     RandomPitch: 0
     loop: 0
   - name: Music
     clip: {fileID: 8300000, guid: 97bba4ff78c0ae945bd84fce2958a60a, type: 3}
-    volume: 0.2
+    volume: 0.1
     pitch: 1
     RandomVolume: 0
     RandomPitch: 0
     loop: 1
   - name: Tutorial_BGM
     clip: {fileID: 8300000, guid: 11a9d72f72ead3c43838d3168beb0d16, type: 3}
-    volume: 0.3
+    volume: 0.05
     pitch: 1
     RandomVolume: 0
     RandomPitch: 0
@@ -91,6 +91,20 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 7a3b4e74b5b81ed4f809135cf933e36b, type: 3}
     volume: 0.3
     pitch: 1
+    RandomVolume: 0
+    RandomPitch: 0
+    loop: 0
+  - name: PickupSound
+    clip: {fileID: 8300000, guid: cbbec6d0b3b5f7440a06a9346afceb0e, type: 3}
+    volume: 0.1
+    pitch: 1
+    RandomVolume: 0.2
+    RandomPitch: 0
+    loop: 0
+  - name: Return2Game_UI
+    clip: {fileID: 8300000, guid: b462e12e71b145e479e8ee6f56c415ab, type: 3}
+    volume: 0
+    pitch: 0.1
     RandomVolume: 0
     RandomPitch: 0
     loop: 0
