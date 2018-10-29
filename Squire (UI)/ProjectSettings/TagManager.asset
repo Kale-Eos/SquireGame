@@ -7,6 +7,7 @@ TagManager:
   - Music
   - PickUps
   - Pickups
+  - InvisibleDoor
   layers:
   - Default
   - TransparentFX
