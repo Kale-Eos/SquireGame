@@ -7,7 +7,7 @@ TagManager:
   - Music
   - PickUps
   - Pickups
-  - InvisibleDoor
+  - LevelButton
   layers:
   - Default
   - TransparentFX

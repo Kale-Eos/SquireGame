@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: c8f74ef28a460ae4db193bcb83253ac7
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: JMH Sindbad
+  fontNames:
+  - JMH Sindbad
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: bbc70baf3f69d9a4092b9284a106918b, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
