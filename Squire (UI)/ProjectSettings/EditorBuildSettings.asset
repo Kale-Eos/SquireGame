@@ -8,16 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Title Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
-    path: Assets/Scenes/SceneDUM.unity
-    guid: f45512993a37dcb438dca790702b70f2
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 358d8b3e5aafeb149b53bfa70467f03f
   - enabled: 1
-    path: Assets/Scenes/SceneDUM1.unity
-    guid: f89550855b525c04c8eb986702c70d33
-  - enabled: 1
-    path: Assets/Scenes/SceneDUM2.unity
+    path: Assets/Scenes/Level1.unity
     guid: 2b89d86228d2a7f4283a910e674be7b7
+  - enabled: 1
+    path: Assets/Scenes/Credits Scene.unity
+    guid: 3e0f3242cf38471419dea78845a8fd81
   m_configObjects: {}

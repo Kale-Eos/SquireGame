@@ -12,6 +12,8 @@ public class MainMenu : MonoBehaviour {
 
     AudioManager audioManager;
 
+    public Animator animator;
+
     void Start()
     {
         audioManager = AudioManager.instance;               // instantiates AudioManager
@@ -31,11 +33,18 @@ public class MainMenu : MonoBehaviour {
         audioManager.PlaySound(pressButtonSound);           // all buttons makes a sound when pressed
     }
 
+
+    public void InGameResume()
+    {
+        audioManager.PlaySound("Return2Game_UI");
+
+    }
+
     public void PlayTutorial()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);       // loads onto the tutorial scene
         audioManager.PlaySound("Tutorial_BGM");                                     // Plays Tutorial_BGM
-        audioManager.StopSound("Music");                                            // stops main menu music
+        audioManager.StopSound("Music");                                            // Stops main menu music
     }
 
     public void PlayLevel1()
@@ -45,23 +54,44 @@ public class MainMenu : MonoBehaviour {
         audioManager.StopSound("Music");                                            // Stops main menu music
     }
 
-    public void PlayLevel2()
+    //    public void PlayLevel2()
+    //    {
+    //        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);       // loads onto the Level 2 scene
+    //        audioManager.PlaySound("Level2_BGM");                                       // Plays Level2_BGM
+    //        audioManager.StopSound("Music");                                            // Stops main menu music
+    //    }
+
+    public void PlayCredits()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);       // loads onto the Level 2 scene
-        audioManager.PlaySound("Level2_BGM");                                       // Plays Level2_BGM
-        audioManager.StopSound("Music");                                            // Stop main menu music
+        SceneManager.LoadScene("Credits Scene");    // loads onto the Credits scene
+        audioManager.PlaySound("Credits_BGM");      // Plays Credits_BGM
+        audioManager.StopSound("Music");            // Stops main menu music
+        audioManager.StopSound("Level1_BGM");       // Stops level 1 music
     }
 
     public void BackToMainMenu()
     {
         SceneManager.LoadScene("Title Scene");      // Reverses the the scene change to go back to Title Scene
+        audioManager.StopSound("Tutorial_BGM");     // Stop Tutorial Music
+        audioManager.StopSound("Level1_BGM");       // Stops level 1 music
+        audioManager.StopSound("Credits_BGM");      // Stops credit music
         audioManager.PlaySound("Music");            // Restarts main menu music
     }
 
-    public void QuitGame ()
+    public void CreditsToMainMenu()
+    {
+        //     animation.Play(Credits.clip.name);
+        //     yield WaitForSeconds(Credits.clip.length + 0);
+        //     Application.LoadLevel("Credits");
+
+        SceneManager.LoadScene("TitleScene");       // Reverses the the scene change to go back to Title Scene
+        audioManager.StopSound("Credits_BGM");      // Stop playing Credits_BGM
+        audioManager.PlaySound("Music");            // Restarts main menu music
+    }
+
+    public void QuitGame()
     {
         Debug.Log("Quitting Game");     // types out ~Quitting Game~
         Application.Quit();             // and quits game
     }
-
 }

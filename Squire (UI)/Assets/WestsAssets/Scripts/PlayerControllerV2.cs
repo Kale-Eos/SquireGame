@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerControllerV2: MonoBehaviour
 {
+
     // magic shit
     // public Rigidbody2D mybody;
 
