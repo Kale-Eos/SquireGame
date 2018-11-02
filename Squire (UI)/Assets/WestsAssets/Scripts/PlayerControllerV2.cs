@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerControllerV2: MonoBehaviour
 {
 
-    // magic shit
-    // public Rigidbody2D mybody;
+    // magic shit//////////
+     //public Rigidbody2D mybody;
 
     //Sets character speed
     public float horizontalSpeed = 5f;
@@ -42,8 +42,8 @@ public class PlayerControllerV2: MonoBehaviour
             Debug.LogError("No AudioManager Found");
         }
 
-        // accesses the juice
-        // mybody = GetComponent<Rigidbody2D>();
+        // accesses the juice////////
+        //mybody = GetComponent<Rigidbody2D>();
 
         //Indicates that the player is facing right from the start.
         facingRight = true;
@@ -86,11 +86,11 @@ public class PlayerControllerV2: MonoBehaviour
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         transform.position = transform.position + new Vector3(horizontalInput * horizontalSpeed * Time.deltaTime, 0, 0);
 
-        // ...replaces chimichangas
-        // Vector2 movement = new Vector3(horizontalInput, horizontalInput, horizontalInput);
+        // ...replaces chimichangas///////
+        //Vector2 movement = new Vector3(horizontalInput, horizontalInput, horizontalInput);
 
-        // with stuff and shit...
-        // mybody.MovePosition(mybody.position + movement * horizontalSpeed * Time.deltaTime);
+        // with stuff and shit...///////
+        //mybody.MovePosition(mybody.position + movement * horizontalSpeed * Time.deltaTime);
 
         //Calls the flip function
         Flip(horizontalInput);
