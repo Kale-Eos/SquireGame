@@ -64,17 +64,25 @@ public class MainMenu : MonoBehaviour {
     public void PlayCredits()
     {
         SceneManager.LoadScene("Credits Scene");    // loads onto the Credits scene
-        audioManager.PlaySound("Credits_BGM");      // Plays Credits_BGM
         audioManager.StopSound("Music");            // Stops main menu music
+        audioManager.StopSound("Tutorial_BGM");     // Stops tutorial music
         audioManager.StopSound("Level1_BGM");       // Stops level 1 music
     }
+
+    public void CreditsTransition()
+    {
+        audioManager.StopSound("Music");            // Stops main menu music
+        audioManager.StopSound("Tutorial_BGM");     // Stops tutorial music
+        audioManager.StopSound("Level1_BGM");       // Stops level 1 music
+        audioManager.PlaySound("Credits_BGM");      // Plays Credits_BGM
+    }
+
 
     public void BackToMainMenu()
     {
         SceneManager.LoadScene("Title Scene");      // Reverses the the scene change to go back to Title Scene
         audioManager.StopSound("Tutorial_BGM");     // Stop Tutorial Music
         audioManager.StopSound("Level1_BGM");       // Stops level 1 music
-        audioManager.StopSound("Credits_BGM");      // Stops credit music
         audioManager.PlaySound("Music");            // Restarts main menu music
     }
 
@@ -84,9 +92,9 @@ public class MainMenu : MonoBehaviour {
         //     yield WaitForSeconds(Credits.clip.length + 0);
         //     Application.LoadLevel("Credits");
 
-        SceneManager.LoadScene("TitleScene");       // Reverses the the scene change to go back to Title Scene
-        audioManager.StopSound("Credits_BGM");      // Stop playing Credits_BGM
-        audioManager.PlaySound("Music");            // Restarts main menu music
+        SceneManager.LoadScene("Title Scene");       // Reverses the the scene change to go back to Title Scene
+        audioManager.StopSound("Credits_BGM");       // Stop playing Credits_BGM
+        audioManager.PlaySound("Music");             // Restarts main menu music
     }
 
     public void QuitGame()
