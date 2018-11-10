@@ -8,6 +8,7 @@ TagManager:
   - PickUps
   - Pickups
   - LevelButton
+  - InvisibleDoor
   layers:
   - Default
   - TransparentFX
@@ -17,11 +18,11 @@ TagManager:
   - UI
   - 
   - 
-  - Ground
   - Interactables
-  - 
-  - 
-  - 
+  - GroundOnly
+  - WallOnly
+  - GroundAndWall
+  - Background
   - 
   - 
   - 
