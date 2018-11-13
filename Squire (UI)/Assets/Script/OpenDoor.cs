@@ -15,11 +15,13 @@ public class OpenDoor : MonoBehaviour {
 	public BoxCollider2D JirenBoxCollider;
 	public BoxCollider2D TriggerDoorBoxCollider;
 
-	void Update() {
-		if (!GameObject.Find("Jiren")) {
+	void Update()
+    {
+		if (!GameObject.Find("Jiren"))
+        {
 			Destroy(InvisibleDoor);
-			/* Jiren shows up on the bottom right which means he is in the inventory */
-			Jiren2.SetActive (true);
+            /* Jiren shows up on the bottom right which means he is in the inventory */
+            Jiren2.SetActive(true);
 		}
 	}
 
