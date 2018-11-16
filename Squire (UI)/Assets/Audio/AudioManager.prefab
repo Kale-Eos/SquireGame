@@ -9,17 +9,17 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1160501220298136}
+  m_RootGameObject: {fileID: 1874887690718802}
   m_IsPrefabAsset: 1
---- !u!1 &1160501220298136
+--- !u!1 &1874887690718802
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4491204278807632}
-  - component: {fileID: 114283454551585428}
+  - component: {fileID: 4458461655471586}
+  - component: {fileID: 114854786191034334}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Music
@@ -27,12 +27,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4491204278807632
+--- !u!4 &4458461655471586
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1160501220298136}
+  m_GameObject: {fileID: 1874887690718802}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,12 +40,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114283454551585428
+--- !u!114 &114854786191034334
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1160501220298136}
+  m_GameObject: {fileID: 1874887690718802}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5db53f7171fef644fb6b83f4eb549717, type: 3}
@@ -67,28 +67,21 @@ MonoBehaviour:
     RandomPitch: 0
     loop: 0
   - name: Music
-    clip: {fileID: 8300000, guid: 97bba4ff78c0ae945bd84fce2958a60a, type: 3}
+    clip: {fileID: 8300000, guid: bf4b25b23555c03479c1d108e1216ce7, type: 3}
     volume: 0.1
     pitch: 1
     RandomVolume: 0
     RandomPitch: 0
     loop: 1
   - name: Tutorial_BGM
-    clip: {fileID: 8300000, guid: 11a9d72f72ead3c43838d3168beb0d16, type: 3}
-    volume: 0.05
+    clip: {fileID: 8300000, guid: f59006eb71f84ff449f44f7670520afc, type: 3}
+    volume: 0.35
     pitch: 1
     RandomVolume: 0
     RandomPitch: 0
     loop: 1
   - name: Level1_BGM
-    clip: {fileID: 8300000, guid: 0d5c38ebb7285a84c8219253880d7dd6, type: 3}
-    volume: 0.3
-    pitch: 1
-    RandomVolume: 0
-    RandomPitch: 0
-    loop: 0
-  - name: Level2_BGM
-    clip: {fileID: 8300000, guid: 7a3b4e74b5b81ed4f809135cf933e36b, type: 3}
+    clip: {fileID: 8300000, guid: 253c9aaba78477f41a2b8f0c0654c316, type: 3}
     volume: 0.3
     pitch: 1
     RandomVolume: 0
@@ -96,15 +89,22 @@ MonoBehaviour:
     loop: 0
   - name: PickupSound
     clip: {fileID: 8300000, guid: cbbec6d0b3b5f7440a06a9346afceb0e, type: 3}
-    volume: 0.1
+    volume: 0.05
     pitch: 1
-    RandomVolume: 0.2
-    RandomPitch: 0
+    RandomVolume: 0
+    RandomPitch: 0.2
     loop: 0
   - name: Return2Game_UI
     clip: {fileID: 8300000, guid: b462e12e71b145e479e8ee6f56c415ab, type: 3}
-    volume: 0
-    pitch: 0.1
+    volume: 0.5
+    pitch: 1
     RandomVolume: 0
     RandomPitch: 0
     loop: 0
+  - name: Credits_BGM
+    clip: {fileID: 8300000, guid: 1480a1cd857fedf4e8a8429831b0885a, type: 3}
+    volume: 0.5
+    pitch: 1
+    RandomVolume: 0
+    RandomPitch: 0
+    loop: 1

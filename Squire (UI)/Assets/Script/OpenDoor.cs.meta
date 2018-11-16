@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 306e59ff5ad0ee0489db3b9165d0410e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - TriggerDoor: {instanceID: 0}
+  - Jiren: {instanceID: 0}
+  - Squire: {instanceID: 0}
+  - InvisibleDoor: {instanceID: 0}
+  - SquireBoxCollider: {instanceID: 0}
+  - JirenBoxCollider: {instanceID: 0}
+  - TriggerDoorBoxCollider: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

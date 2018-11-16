@@ -6,7 +6,7 @@ public class PlayerControllerV2: MonoBehaviour
 {
 
     // magic shit//////////
-     //public Rigidbody2D mybody;
+    // public Rigidbody2D mybody;
 
     //Sets character speed
     public float horizontalSpeed = 5f;
@@ -43,7 +43,7 @@ public class PlayerControllerV2: MonoBehaviour
         }
 
         // accesses the juice////////
-        //mybody = GetComponent<Rigidbody2D>();
+        // mybody = GetComponent<Rigidbody2D>();
 
         //Indicates that the player is facing right from the start.
         facingRight = true;
@@ -87,10 +87,10 @@ public class PlayerControllerV2: MonoBehaviour
         transform.position = transform.position + new Vector3(horizontalInput * horizontalSpeed * Time.deltaTime, 0, 0);
 
         // ...replaces chimichangas///////
-        //Vector2 movement = new Vector3(horizontalInput, horizontalInput, horizontalInput);
+        // Vector2 movement = new Vector3(horizontalInput, horizontalInput, horizontalInput);
 
         // with stuff and shit...///////
-        //mybody.MovePosition(mybody.position + movement * horizontalSpeed * Time.deltaTime);
+        // mybody.MovePosition(mybody.position + movement * horizontalSpeed * Time.deltaTime);
 
         //Calls the flip function
         Flip(horizontalInput);
