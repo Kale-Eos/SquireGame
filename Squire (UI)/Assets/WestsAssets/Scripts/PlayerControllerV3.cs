@@ -186,12 +186,11 @@ public class PlayerControllerV3 : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         // targests only PickUps
-        if (other.gameObject.CompareTag("PickUps"))
-        {
-            // PickUp is destroyed and makes sound
-            other.gameObject.SetActive(false);
+		if (other.gameObject.CompareTag ("PickUps")) {
+			// PickUp is destroyed and makes sound
+			other.gameObject.SetActive (false);
 
-            audioManager.PlaySound("PickupSound");      // plays PickupSound.wav
-        }
+			audioManager.PlaySound ("PickupSound");      // plays PickupSound.wav
+		} 
     }
 }
