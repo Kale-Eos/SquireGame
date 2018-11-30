@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour {
+public class MainMenu : MonoBehaviour
+{
 
     [SerializeField]                                        // instantiates field
     string hoverOverSound = "ButtonHover";                  // instantiates Hover Over Sound
