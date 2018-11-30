@@ -45,13 +45,20 @@ public class PlayerControllerV3 : MonoBehaviour
     public float checkRadiusWall;
     public LayerMask wallLayer;
 
+    [Space]
+    [Header("Interaction Settings:")]
+    public bool isNextToInteractable;
+    public bool isNextToInteractable2;
+    public Transform interactableCheck;
+    public Transform interactableCheck2;
+    public float checkRadiusInteractable;
+    public LayerMask interactableLayer;
+
 
     [Space]
     [Header("Other:")]
+    public GameObject TriggerDoor;    // sets TriggerDoor object
     AudioManager audioManager;      // audio manager is now accessed
-
-    // sets TriggerDoor object
-    public GameObject TriggerDoor;
 
     void Start()
     {
@@ -92,6 +99,9 @@ public class PlayerControllerV3 : MonoBehaviour
         isNextToWallGround = Physics2D.OverlapCircle(wallCheck.position, checkRadiusWall, groundAndWallLayer);
         isNextToWallGround2 = Physics2D.OverlapCircle(wallCheck2.position, checkRadiusWall, groundAndWallLayer);
 
+        //Checks if an interactable object is next to the player, like the ground and wall checks.
+        isNextToInteractable = Physics2D.OverlapCircle(interactableCheck.position, checkRadiusInteractable, interactableLayer);
+        isNextToInteractable2 = Physics2D.OverlapCircle(interactableCheck2.position, checkRadiusInteractable, interactableLayer);
 
         //Sets horizontalInput to horizontal movement, or left and right movement
         horizontalInput = Input.GetAxisRaw("Horizontal");
