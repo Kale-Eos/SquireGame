@@ -435,7 +435,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 306223125}
   m_LocalRotation: {x: -0.07437623, y: 0.0000000039713894, z: -2.9619737e-10, w: 0.9972303}
-  m_LocalPosition: {x: -8.1, y: 3, z: 9.7}
+  m_LocalPosition: {x: -9, y: 3, z: 9.7}
   m_LocalScale: {x: 0.20893458, y: 0.20893575, z: 0.209}
   m_Children: []
   m_Father: {fileID: 917436193}
@@ -452,6 +452,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006547e2c21392141a1941060c4163bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Squire: {fileID: 1357493657}
+  Hearts1: {fileID: 1255200871}
+  Hearts2: {fileID: 306223125}
+  Hearts3: {fileID: 1646893511}
+  Hearts: 3
+  invincible: 0
 --- !u!212 &306223128
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -495,7 +501,7 @@ SpriteRenderer:
   m_Size: {x: 16.28, y: 12.3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &316682867
@@ -2068,6 +2074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176dd429542a8094989a01caac1912ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  INGameCanvas2: {fileID: 0}
 --- !u!1 &779731940
 GameObject:
   m_ObjectHideFlags: 0
@@ -4271,7 +4278,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1255200871}
   m_LocalRotation: {x: -0.07437623, y: 0.0000000039713894, z: -2.9619737e-10, w: 0.9972303}
-  m_LocalPosition: {x: -8.6, y: 3.4, z: 9.2}
+  m_LocalPosition: {x: -9.3, y: 3, z: 9.3}
   m_LocalScale: {x: 0.022064209, y: 0.022064332, z: 0.053832}
   m_Children: []
   m_Father: {fileID: 917436193}
@@ -4288,6 +4295,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006547e2c21392141a1941060c4163bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Squire: {fileID: 1357493657}
+  Hearts1: {fileID: 1255200871}
+  Hearts2: {fileID: 306223125}
+  Hearts3: {fileID: 1646893511}
+  Hearts: 3
+  invincible: 0
 --- !u!212 &1255200874
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4331,7 +4344,7 @@ SpriteRenderer:
   m_Size: {x: 80, y: 73.310005}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1272130608
@@ -4557,6 +4570,7 @@ GameObject:
   - component: {fileID: 1357493659}
   - component: {fileID: 1357493662}
   - component: {fileID: 1357493663}
+  - component: {fileID: 1357493658}
   m_Layer: 0
   m_Name: Squire
   m_TagString: Player
@@ -4564,6 +4578,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1357493658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1357493657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006547e2c21392141a1941060c4163bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Squire: {fileID: 1357493657}
+  Hearts1: {fileID: 1255200871}
+  Hearts2: {fileID: 306223125}
+  Hearts3: {fileID: 1646893511}
+  Hearts: 3
+  invincible: 0
 --- !u!50 &1357493659
 Rigidbody2D:
   serializedVersion: 4
@@ -5387,7 +5418,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1646893511}
   m_LocalRotation: {x: -0.07437623, y: 0.0000000039713894, z: -2.9619737e-10, w: 0.9972303}
-  m_LocalPosition: {x: -8.2, y: 3.2, z: 9.9}
+  m_LocalPosition: {x: -9.7, y: 3.2, z: 9.9}
   m_LocalScale: {x: 0.21929626, y: 0.21929748, z: 0.21936494}
   m_Children: []
   m_Father: {fileID: 917436193}
@@ -5404,6 +5435,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006547e2c21392141a1941060c4163bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Squire: {fileID: 1357493657}
+  Hearts1: {fileID: 1255200871}
+  Hearts2: {fileID: 306223125}
+  Hearts3: {fileID: 1646893511}
+  Hearts: 3
+  invincible: 0
 --- !u!212 &1646893514
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5447,7 +5484,7 @@ SpriteRenderer:
   m_Size: {x: 11.16, y: 11.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1654236476
