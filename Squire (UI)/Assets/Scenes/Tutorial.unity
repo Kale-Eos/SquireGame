@@ -831,11 +831,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4632431222760022, guid: 1884618eb3d32a14bb2e57db4cd3aa62, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -226.20454
+      value: -226.36
       objectReference: {fileID: 0}
     - target: {fileID: 4632431222760022, guid: 1884618eb3d32a14bb2e57db4cd3aa62, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 296.11417
+      value: 296.33
       objectReference: {fileID: 0}
     - target: {fileID: 4632431222760022, guid: 1884618eb3d32a14bb2e57db4cd3aa62, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4693,6 +4693,7 @@ MonoBehaviour:
   jumpHeight: 9
   extraJumpsAmount: 0
   jumpTime: 0.3
+  Jiren2: {fileID: 1836122852}
   isGrounded: 0
   isGroundedOnWall: 0
   isOnGroundWallLayer: 0
@@ -6109,7 +6110,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1836122852}
   m_LocalRotation: {x: 0.14702803, y: -0.0017314112, z: 0.0019547034, w: -0.98912895}
-  m_LocalPosition: {x: 8.729993, y: -3.4499955, z: 11.46}
+  m_LocalPosition: {x: 10.65, y: -3.57, z: 11.48}
   m_LocalScale: {x: 0.20794986, y: 0.20795551, z: 0.20801}
   m_Children: []
   m_Father: {fileID: 917436193}

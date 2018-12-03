@@ -23,6 +23,8 @@ public class PlayerControllerV3 : MonoBehaviour
 
     private bool facingRight = true;
 
+	public GameObject Jiren2;
+
     [Space]
     [Header("Ground Check Settings:")]
     public bool isGrounded;
@@ -209,7 +211,7 @@ public class PlayerControllerV3 : MonoBehaviour
 		if (other.gameObject.CompareTag ("PickUps")) {
 			// PickUp is destroyed and makes sound
 			other.gameObject.SetActive (false);
-
+			Jiren2.SetActive (true);
 			audioManager.PlaySound ("PickupSound");      // plays PickupSound.wav
 		} 
     }
