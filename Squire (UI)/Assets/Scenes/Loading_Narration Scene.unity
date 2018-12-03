@@ -362,21 +362,40 @@ Prefab:
     - target: {fileID: 224127362479159470, guid: a6ec43c504d9ac54c982769a1b088ce4,
         type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.3723625
+      value: 1.5939399
       objectReference: {fileID: 0}
     - target: {fileID: 224127362479159470, guid: a6ec43c504d9ac54c982769a1b088ce4,
         type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.7939348
+      value: 2.083578
       objectReference: {fileID: 0}
     - target: {fileID: 224127362479159470, guid: a6ec43c504d9ac54c982769a1b088ce4,
         type: 2}
       propertyPath: m_LocalScale.z
-      value: 1.3723625
+      value: 1.5939399
       objectReference: {fileID: 0}
+    - target: {fileID: 114162631941228030, guid: a6ec43c504d9ac54c982769a1b088ce4,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1829606039130566, guid: a6ec43c504d9ac54c982769a1b088ce4, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114731162161309776, guid: a6ec43c504d9ac54c982769a1b088ce4,
+        type: 2}
+      propertyPath: blackFade
+      value: 
+      objectReference: {fileID: 1495897472}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6ec43c504d9ac54c982769a1b088ce4, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1495897472 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1829606039130566, guid: a6ec43c504d9ac54c982769a1b088ce4,
+    type: 2}
+  m_PrefabInternal: {fileID: 760399604}
 --- !u!1 &1800603029
 GameObject:
   m_ObjectHideFlags: 0
