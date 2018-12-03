@@ -36,6 +36,8 @@ public class PlayerControllerV3 : MonoBehaviour
     [Space]
     [Header("Wall Check Settings:")]
     public float wallClimbSpeed;
+    private int maxWallJumpReset;
+    public int maxWallJumps;
     public bool isNextToWall;
     public bool isNextToWall2;
     public bool isNextToWallGround;
@@ -70,6 +72,9 @@ public class PlayerControllerV3 : MonoBehaviour
 
         //Used to that it's up to the inspector to determine how many extra jumps there are.
         extraJumps = extraJumpsAmount;
+
+        //Used to later reset maxWallJumps back to its original value.
+        maxWallJumpReset = maxWallJumps;
 
         //References RigidBody2D to variable rb
         rb = GetComponent<Rigidbody2D>();
@@ -129,6 +134,7 @@ public class PlayerControllerV3 : MonoBehaviour
         if (isGrounded == true || isOnGroundWallLayer == true || isGroundedOnWall == true)
         {
             extraJumps = extraJumpsAmount;
+            
         }
 
         //If the player jumps and if they have extra jumps, allow them to jump at a height determined by the jumpHeight variable.
@@ -167,18 +173,22 @@ public class PlayerControllerV3 : MonoBehaviour
         }
 
 
-        //Allows wall climb on the WallOnly Layer when the player is close to wall and presses space.
-        if (Input.GetButtonDown("Jump") && isNextToWall == true || Input.GetButtonDown("Jump") && isNextToWall2 == true)
+        //Allows wall climb on the WallOnly Layer or the GroundWall Layer when the player is close to wall and presses space. If the player is on the ground and next to the wall, it'll use the regular jump code and not the wall jump code.
+        if(isGrounded == false && isGroundedOnWall == false && isOnGroundWallLayer == false)
         {
-            isJumping = false;
-            rb.velocity = Vector2.up * wallClimbSpeed;
+            if (Input.GetButtonDown("Jump") && isNextToWall == true && maxWallJumps > 0 || Input.GetButtonDown("Jump") && isNextToWall2 == true && maxWallJumps > 0 || Input.GetButtonDown("Jump") && isNextToWallGround == true && maxWallJumps > 0 || Input.GetButtonDown("Jump") && isNextToWallGround2 == true && maxWallJumps > 0)
+            {
+                isJumping = false;
+                rb.velocity = Vector2.up * wallClimbSpeed;
+                maxWallJumps--;
+            }
         }
 
-        //Allows wall climb on the GroundAndWall Layer when the player is close to wall and presses space.
-        if (Input.GetButtonDown("Jump") && isNextToWallGround == true || Input.GetButtonDown("Jump") && isNextToWallGround2 == true)
+
+        //Resets the wall jump if there's no contact with a wall.
+        if (isGrounded == true || isGroundedOnWall == true || isOnGroundWallLayer == true)
         {
-            isJumping = false;
-            rb.velocity = Vector2.up * wallClimbSpeed;
+            maxWallJumps = maxWallJumpReset;
         }
 
     }
