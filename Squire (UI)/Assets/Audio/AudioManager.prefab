@@ -80,13 +80,13 @@ MonoBehaviour:
     RandomVolume: 0
     RandomPitch: 0
     loop: 1
-  - name: Level1_BGM
-    clip: {fileID: 8300000, guid: 253c9aaba78477f41a2b8f0c0654c316, type: 3}
+  - name: Loading_BGM
+    clip: {fileID: 8300000, guid: b1eac321418879c4583b14649a0044fc, type: 3}
     volume: 0.3
     pitch: 1
     RandomVolume: 0
     RandomPitch: 0
-    loop: 0
+    loop: 1
   - name: PickupSound
     clip: {fileID: 8300000, guid: cbbec6d0b3b5f7440a06a9346afceb0e, type: 3}
     volume: 0.05
@@ -108,3 +108,10 @@ MonoBehaviour:
     RandomVolume: 0
     RandomPitch: 0
     loop: 1
+  - name: LockedDoor
+    clip: {fileID: 8300000, guid: ca9f94e70197d224db72f2bc162db056, type: 3}
+    volume: 0.35
+    pitch: 1
+    RandomVolume: 0
+    RandomPitch: 0
+    loop: 0

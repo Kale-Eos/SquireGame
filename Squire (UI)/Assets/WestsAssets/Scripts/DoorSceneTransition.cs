@@ -6,7 +6,6 @@ public class DoorSceneTransition : MonoBehaviour
 {
     private PlayerControllerV3 PCV3Script;
     private ItemPickup IPScript;
-    private AudioManager audioManager;
     public GameObject openDoor;
     public GameObject openDoorTeleport;
 
@@ -33,8 +32,8 @@ public class DoorSceneTransition : MonoBehaviour
             openDoorTeleport.SetActive(true);
             //openDoor.SceneTransition.SetActive(true);
             gameObject.SetActive(false);
-
         }
+
         //If the player is next to the door, presses the interaction key, but has not yet collected the item, then Squire will say a line.
         else if (Input.GetButtonDown("Interaction") && PCV3Script.isNextToInteractable != true && IPScript.pickedUp == true || Input.GetButtonDown("Interaction") && PCV3Script.isNextToInteractable2 == true && IPScript.pickedUp != true)
         {
@@ -46,7 +45,6 @@ public class DoorSceneTransition : MonoBehaviour
         {
             StartCoroutine(TextDuration());
         }
-
     }
 
     IEnumerator TextDuration()

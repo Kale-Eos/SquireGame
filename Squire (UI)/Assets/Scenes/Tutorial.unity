@@ -970,11 +970,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4632431222760022, guid: 1884618eb3d32a14bb2e57db4cd3aa62, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -226.36
+      value: -226
       objectReference: {fileID: 0}
     - target: {fileID: 4632431222760022, guid: 1884618eb3d32a14bb2e57db4cd3aa62, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 296.33
+      value: 295.5
       objectReference: {fileID: 0}
     - target: {fileID: 4632431222760022, guid: 1884618eb3d32a14bb2e57db4cd3aa62, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1020,25 +1020,45 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4632431222760022, guid: 1884618eb3d32a14bb2e57db4cd3aa62, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.35
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4632431222760022, guid: 1884618eb3d32a14bb2e57db4cd3aa62, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.35
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 61872823536076176, guid: 1884618eb3d32a14bb2e57db4cd3aa62,
         type: 2}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 9
+      value: 2.77
       objectReference: {fileID: 0}
     - target: {fileID: 61872823536076176, guid: 1884618eb3d32a14bb2e57db4cd3aa62,
         type: 2}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 12
+      value: 4.79
       objectReference: {fileID: 0}
     - target: {fileID: 1156632202513914, guid: 1884618eb3d32a14bb2e57db4cd3aa62, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212025496389509558, guid: 1884618eb3d32a14bb2e57db4cd3aa62,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9e8a0392fd19bbd49a1ab207d13affce,
+        type: 3}
+    - target: {fileID: 61872823536076176, guid: 1884618eb3d32a14bb2e57db4cd3aa62,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 61872823536076176, guid: 1884618eb3d32a14bb2e57db4cd3aa62,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156632202513914, guid: 1884618eb3d32a14bb2e57db4cd3aa62, type: 2}
+      propertyPath: m_Name
+      value: Greaves
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114563357430930664, guid: 1884618eb3d32a14bb2e57db4cd3aa62, type: 2}
@@ -1521,7 +1541,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &606172574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2585,11 +2605,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1156632202513914, guid: 1884618eb3d32a14bb2e57db4cd3aa62,
     type: 2}
   m_PrefabInternal: {fileID: 385430304}
---- !u!61 &882998126 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 61872823536076176, guid: 1884618eb3d32a14bb2e57db4cd3aa62,
-    type: 2}
-  m_PrefabInternal: {fileID: 385430304}
 --- !u!114 &882998127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2602,13 +2617,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TriggerDoor: {fileID: 0}
-  Jiren: {fileID: 882998124}
+  Greaves: {fileID: 0}
   Squire: {fileID: 1357493657}
-  Jiren2: {fileID: 1836122852}
+  Greaves2: {fileID: 1836122852}
   InvisibleDoor: {fileID: 989531128}
   SquireBoxCollider: {fileID: 0}
   InvisibleDoorCollider: {fileID: 0}
-  JirenBoxCollider: {fileID: 882998126}
+  GreavesBoxCollider: {fileID: 0}
   TriggerDoorBoxCollider: {fileID: 0}
 --- !u!1 &889556217
 GameObject:
@@ -3140,13 +3155,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TriggerDoor: {fileID: 0}
-  Jiren: {fileID: 882998124}
+  Greaves: {fileID: 0}
   Squire: {fileID: 1357493657}
-  Jiren2: {fileID: 1836122852}
+  Greaves2: {fileID: 0}
   InvisibleDoor: {fileID: 989531128}
   SquireBoxCollider: {fileID: 1357493663}
   InvisibleDoorCollider: {fileID: 0}
-  JirenBoxCollider: {fileID: 882998126}
+  GreavesBoxCollider: {fileID: 0}
   TriggerDoorBoxCollider: {fileID: 0}
 --- !u!1 &1011410457
 GameObject:
@@ -3416,7 +3431,7 @@ Prefab:
     - target: {fileID: 212333592681963000, guid: 59c4dd18f0e99fe44a25a7e1e81b48d7,
         type: 2}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 50083037678140890, guid: 59c4dd18f0e99fe44a25a7e1e81b48d7,
         type: 2}
@@ -3425,7 +3440,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4170282276554942, guid: 59c4dd18f0e99fe44a25a7e1e81b48d7, type: 2}
       propertyPath: m_LocalScale.y
-      value: 4.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 61977777619920506, guid: 59c4dd18f0e99fe44a25a7e1e81b48d7,
         type: 2}
@@ -3458,6 +3473,27 @@ Prefab:
         type: 2}
       propertyPath: m_Color.b
       value: 0.15659486
+      objectReference: {fileID: 0}
+    - target: {fileID: 212333592681963000, guid: 59c4dd18f0e99fe44a25a7e1e81b48d7,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: abf30d5bffa72c543aa24836f42879c3,
+        type: 3}
+    - target: {fileID: 61977777619920506, guid: 59c4dd18f0e99fe44a25a7e1e81b48d7,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 61977777619920506, guid: 59c4dd18f0e99fe44a25a7e1e81b48d7,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 4.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 61977777619920506, guid: 59c4dd18f0e99fe44a25a7e1e81b48d7,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59c4dd18f0e99fe44a25a7e1e81b48d7, type: 2}
@@ -4832,7 +4868,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: f5d5a82db9c5d5b4dbc200cc2b6c2a2c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e593fcb4815d3e24e9c4630d351d087d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4858,7 +4894,7 @@ MonoBehaviour:
   jumpHeight: 10
   extraJumpsAmount: 0
   jumpTime: 0.25
-  Jiren2: {fileID: 1836122852}
+  Greaves2: {fileID: 1836122852}
   isGrounded: 0
   isGroundedOnWall: 0
   isOnGroundWallLayer: 0
@@ -4890,7 +4926,7 @@ MonoBehaviour:
   interactableLayer:
     serializedVersion: 2
     m_Bits: 256
-  TriggerDoor: {fileID: 0}
+  TriggerDoor: {fileID: 1836122852}
 --- !u!66 &1357493663
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -5291,7 +5327,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4170282276554942, guid: 59c4dd18f0e99fe44a25a7e1e81b48d7, type: 2}
       propertyPath: m_LocalScale.y
-      value: 4.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 61977777619920506, guid: 59c4dd18f0e99fe44a25a7e1e81b48d7,
         type: 2}
@@ -5304,7 +5340,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4170282276554942, guid: 59c4dd18f0e99fe44a25a7e1e81b48d7, type: 2}
       propertyPath: m_LocalScale.x
-      value: 2.6587963
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1850280908480324, guid: 59c4dd18f0e99fe44a25a7e1e81b48d7, type: 2}
       propertyPath: m_Name
@@ -5328,6 +5364,22 @@ Prefab:
     - target: {fileID: 1850280908480324, guid: 59c4dd18f0e99fe44a25a7e1e81b48d7, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212333592681963000, guid: 59c4dd18f0e99fe44a25a7e1e81b48d7,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 288ae7df0b6090841b7a87f7bbccdd68,
+        type: 3}
+    - target: {fileID: 61977777619920506, guid: 59c4dd18f0e99fe44a25a7e1e81b48d7,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 61977777619920506, guid: 59c4dd18f0e99fe44a25a7e1e81b48d7,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 4.78
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59c4dd18f0e99fe44a25a7e1e81b48d7, type: 2}
@@ -5926,8 +5978,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1685710117}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -178.49998, y: 190.9028, z: 0.2109375}
-  m_LocalScale: {x: 1, y: 15.060938, z: 1}
+  m_LocalPosition: {x: -178.49998, y: 190.9494, z: 0.2109375}
+  m_LocalScale: {x: 1, y: 14.963154, z: 1}
   m_Children: []
   m_Father: {fileID: 1906480921}
   m_RootOrder: 3
@@ -6229,7 +6281,7 @@ GameObject:
   - component: {fileID: 1836122853}
   - component: {fileID: 1836122855}
   m_Layer: 0
-  m_Name: Jiren2
+  m_Name: Greaves2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6270,7 +6322,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 999
-  m_Sprite: {fileID: 21300000, guid: 06bb572d3af80f849a20d21979f0d6c6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e8a0392fd19bbd49a1ab207d13affce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6289,7 +6341,7 @@ Transform:
   m_GameObject: {fileID: 1836122852}
   m_LocalRotation: {x: 0.14702803, y: -0.0017314112, z: 0.0019547034, w: -0.98912895}
   m_LocalPosition: {x: 7.78, y: -3.86, z: 11.58}
-  m_LocalScale: {x: 0.20794986, y: 0.20795551, z: 0.20801}
+  m_LocalScale: {x: 0.45, y: 0.45, z: 0.20801}
   m_Children: []
   m_Father: {fileID: 917436193}
   m_RootOrder: 4
@@ -6306,13 +6358,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TriggerDoor: {fileID: 0}
-  Jiren: {fileID: 0}
+  Greaves: {fileID: 0}
   Squire: {fileID: 0}
-  Jiren2: {fileID: 1836122852}
+  Greaves2: {fileID: 1836122852}
   InvisibleDoor: {fileID: 0}
   SquireBoxCollider: {fileID: 0}
   InvisibleDoorCollider: {fileID: 0}
-  JirenBoxCollider: {fileID: 0}
+  GreavesBoxCollider: {fileID: 0}
   TriggerDoorBoxCollider: {fileID: 0}
 --- !u!4 &1852002279
 Transform:

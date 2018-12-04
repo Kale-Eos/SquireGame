@@ -6,23 +6,23 @@ using UnityEngine.SceneManagement;
 public class OpenDoor : MonoBehaviour {
 
     public GameObject TriggerDoor;
-    public GameObject Jiren;
+    public GameObject Greaves;
 	public GameObject Squire;
-	public GameObject Jiren2;
+	public GameObject Greaves2;
 	public GameObject InvisibleDoor;
 	public CompositeCollider2D SquireBoxCollider;
 	public CompositeCollider2D InvisibleDoorCollider;
-	public BoxCollider2D JirenBoxCollider;
+	public BoxCollider2D GreavesBoxCollider;
 	public BoxCollider2D TriggerDoorBoxCollider;
 
 
 	void Update()
     {
-		if (!GameObject.Find("Jiren"))
+		if (!GameObject.Find("Greaves"))
         {
             //Destroy(InvisibleDoor);
             /* Jiren shows up on the bottom right which means he is in the inventory */
-            Jiren2.SetActive(true);
+            Greaves2.SetActive(true);
 		}
 
     }
