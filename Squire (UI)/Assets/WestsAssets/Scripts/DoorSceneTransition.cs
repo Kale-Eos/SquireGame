@@ -55,4 +55,5 @@ public class DoorSceneTransition : MonoBehaviour
         dialogueText5.gameObject.SetActive(false);
         textEnabled = false;
     }
+
 }
