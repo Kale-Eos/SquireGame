@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FadeInPlayerFreeze : MonoBehaviour
 {
-
+    //This script's purpose is to freeze the player while the fade-in plays.
     public GameObject player;
     public float waitTime = 2.0f;
     private bool waitTimeOver = false;

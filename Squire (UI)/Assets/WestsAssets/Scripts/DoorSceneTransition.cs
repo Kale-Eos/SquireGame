@@ -36,8 +36,8 @@ public class DoorSceneTransition : MonoBehaviour
         {
             openDoor.SetActive(true);
             openDoorTeleport.SetActive(true);
-            //openDoor.SceneTransition.SetActive(true);
             gameObject.SetActive(false);
+            //DOOR OPEN SOUND WOULD BE CODED HERE. KEEP IN MIND THAT THE GAMEOBJECT THIS SCRIPT IS ATTACHED TO TURNS OFF ONCE THE PLAYER INTERACTS WITH THE DOOR.
         }
         //If the player is next to the door, presses the interaction key, but has not yet collected the item, then Squire will say a line.
         else if (Input.GetButtonDown("Interaction") && PCV3Script.isNextToInteractable == true && IPScript.pickedUp != true && textEnabled != true|| Input.GetButtonDown("Interaction") && PCV3Script.isNextToInteractable2 == true && IPScript.pickedUp != true && textEnabled != true)
@@ -47,13 +47,6 @@ public class DoorSceneTransition : MonoBehaviour
             textEnabled = true;
             StartCoroutine(TextDuration());
         }
-
-
-        //if (textEnabled == true)
-        //{
-
-            //StartCoroutine(TextDuration());
-        //}
     }
 
     IEnumerator TextDuration()
