@@ -6,10 +6,16 @@ public class DoorSceneTransition : MonoBehaviour
 {
     private PlayerControllerV3 PCV3Script;
     private ItemPickup IPScript;
+
+    [Space]
+    [Header("Door Settings:")]
     public GameObject openDoor;
     public GameObject openDoorTeleport;
 
+    [Space]
+    [Header("Dialogue Settings:")]
     public GameObject dialogueText5;
+    public GameObject textBox;
     private bool textEnabled;
 
     // Use this for initialization
@@ -37,6 +43,7 @@ public class DoorSceneTransition : MonoBehaviour
         else if (Input.GetButtonDown("Interaction") && PCV3Script.isNextToInteractable == true && IPScript.pickedUp != true && textEnabled != true|| Input.GetButtonDown("Interaction") && PCV3Script.isNextToInteractable2 == true && IPScript.pickedUp != true && textEnabled != true)
         {
             dialogueText5.gameObject.SetActive(true);
+            textBox.gameObject.SetActive(true);
             textEnabled = true;
             StartCoroutine(TextDuration());
         }
@@ -53,6 +60,15 @@ public class DoorSceneTransition : MonoBehaviour
     {
         yield return new WaitForSeconds(4.0f);
         dialogueText5.gameObject.SetActive(false);
+        textBox.gameObject.SetActive(false);
+        textEnabled = false;
+    }
+
+    //When called, ends the dialogue early.
+    public void EndTextEarly()
+    {
+        dialogueText5.gameObject.SetActive(false);
+        textBox.gameObject.SetActive(false);
         textEnabled = false;
     }
 

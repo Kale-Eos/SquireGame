@@ -5,9 +5,18 @@ using UnityEngine;
 public class DialogueScript : MonoBehaviour
 {
     private PlayerControllerV3 PCV3Script;
+    private DoorSceneTransition DSTScript;
+
+    [Space]
+    [Header("Dialogue Settings:")]
+    public float dialogueDuration;
+    public GameObject dialogueText;
+    public GameObject textBox;
+
+    [Space]
+    [Header("Other:")]
     public GameObject player;
 
-    public GameObject Dialogue;
     public GameObject screenDim;
 
     private float movementSpeedReset;
@@ -17,6 +26,9 @@ public class DialogueScript : MonoBehaviour
     {
         //References the PlayerControllerV3 Script by finding the GameObject with the "Player" tag so that components from the Player GameObject can be used.
         PCV3Script = GameObject.FindWithTag("Player").GetComponent<PlayerControllerV3>();
+
+        //References the DoorSceneTransition Script by finding the ClosedDoor GameObject.
+        DSTScript = GameObject.Find("ClosedDoor").GetComponent<DoorSceneTransition>();
 
         //Used to later reset the movementSpeed value back to whatever it was previously set to.
         movementSpeedReset = PCV3Script.movementSpeed;
@@ -28,12 +40,14 @@ public class DialogueScript : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            DSTScript.EndTextEarly();                    //If there's dialogue from the Squire saying "I can't leave without the Knight's greaves." currently playing, it'll be ended early.
             PCV3Script.movementSpeed = 0.0f;
             if (PCV3Script.movementSpeed == 0.0f)
             {
                 StartCoroutine(Wait());
             }
-            Dialogue.gameObject.SetActive(true);
+            dialogueText.gameObject.SetActive(true);
+            textBox.gameObject.SetActive(true);
             screenDim.gameObject.SetActive(true);
 
             StartCoroutine(ResetTime());
@@ -43,11 +57,12 @@ public class DialogueScript : MonoBehaviour
     IEnumerator ResetTime()
     {
 
-        yield return new WaitForSeconds(4.0f);
+        yield return new WaitForSeconds(dialogueDuration);
         PCV3Script.movementSpeed = movementSpeedReset;
         player.GetComponent<PlayerControllerV3>().enabled = true;
 
-        Dialogue.gameObject.SetActive(false);
+        dialogueText.gameObject.SetActive(false);
+        textBox.gameObject.SetActive(false);
         gameObject.SetActive(false);
 
         screenDim.gameObject.SetActive(false);

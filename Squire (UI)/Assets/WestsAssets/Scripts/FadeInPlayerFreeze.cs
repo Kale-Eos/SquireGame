@@ -22,6 +22,7 @@ public class FadeInPlayerFreeze : MonoBehaviour
         {
             player.GetComponent<PlayerControllerV3>().enabled = true;
             waitTimeOver = true;
+            gameObject.SetActive(false);
         }
     }
 }
