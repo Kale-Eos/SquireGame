@@ -2297,11 +2297,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114854786191034334, guid: f4678d180e301d544a011b9572645242,
-        type: 2}
-      propertyPath: sounds.Array.size
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 4458461655471586, guid: f4678d180e301d544a011b9572645242, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2333,31 +2328,6 @@ Prefab:
     - target: {fileID: 4458461655471586, guid: f4678d180e301d544a011b9572645242, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114854786191034334, guid: f4678d180e301d544a011b9572645242,
-        type: 2}
-      propertyPath: sounds.Array.data[9].name
-      value: CloseInGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 114854786191034334, guid: f4678d180e301d544a011b9572645242,
-        type: 2}
-      propertyPath: sounds.Array.data[9].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: ca9f94e70197d224db72f2bc162db056, type: 3}
-    - target: {fileID: 114854786191034334, guid: f4678d180e301d544a011b9572645242,
-        type: 2}
-      propertyPath: sounds.Array.data[9].volume
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 114854786191034334, guid: f4678d180e301d544a011b9572645242,
-        type: 2}
-      propertyPath: sounds.Array.data[9].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114854786191034334, guid: f4678d180e301d544a011b9572645242,
-        type: 2}
-      propertyPath: sounds.Array.data[6].volume
-      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4678d180e301d544a011b9572645242, type: 2}
@@ -7343,7 +7313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518efaa1479e5024a8c5d2a513a5a559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 6
+  movementSpeed: 7
   jumpHeight: 10
   extraJumpsAmount: 0
   jumpTime: 0.25

@@ -44,20 +44,19 @@ public class Health : MonoBehaviour {
 		} 
 
 		/* When the number of hearts equals 1, hearts1 appears */
-		else if (Hearts == 1)
+		if (Hearts == 1)
         {
-			Hearts3.SetActive (false);
+            Hearts3.SetActive (false);
 			Hearts2.SetActive (false);
-			Hearts1.SetActive (true);
-		}
+            Hearts1.SetActive (true);
+        }
         
 		/* When the number of hearts equals 2, hearts2 appears */
-		else if (Hearts == 2)
+		if (Hearts == 2)
         {
-			Hearts3.SetActive (false);
-            audioManager.PlaySound("Hit");
+            Hearts3.SetActive (false);
             Hearts2.SetActive (true);
-		} 
+        } 
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
@@ -68,7 +67,8 @@ public class Health : MonoBehaviour {
 			if (collision.gameObject.CompareTag("harmful"))
             {
                 Hearts = Hearts - 1;
-				invincible = true;
+                audioManager.PlaySound("Hit");
+                invincible = true;
 				/* Invulnerability period ends after 0.5 seconds*/
 				Invoke("notInvincible", 0.5f);
 			}
@@ -77,6 +77,6 @@ public class Health : MonoBehaviour {
 
 	void notInvincible()
     {
-		invincible = false;
-	}
+        invincible = false;
+    }
 }

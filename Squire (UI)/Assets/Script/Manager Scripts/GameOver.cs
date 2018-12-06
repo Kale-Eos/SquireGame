@@ -18,6 +18,7 @@ public class GameOver : MonoBehaviour
 
     public GameObject GameOverUI;
 
+    Animation anim;
 
 	void Start ()
     {

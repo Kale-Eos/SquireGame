@@ -21,6 +21,7 @@ public class DialogueScript : MonoBehaviour
 
     private float movementSpeedReset;
 
+    Animation anim;
 
     void Start()
     {
@@ -49,7 +50,6 @@ public class DialogueScript : MonoBehaviour
             dialogueText.gameObject.SetActive(true);
             textBox.gameObject.SetActive(true);
             screenDim.gameObject.SetActive(true);
-
             StartCoroutine(ResetTime());
         }
     }

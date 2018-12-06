@@ -20,7 +20,7 @@ public class GameTransition : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-			levelChanger2.FadeToLevel(3);
+			levelChanger2.FadeToLevel(2);
             audioManager.StopSound("Music");
             audioManager.StopSound("Tutorial_BGM");
             audioManager.PlaySound("Credits_BGM");

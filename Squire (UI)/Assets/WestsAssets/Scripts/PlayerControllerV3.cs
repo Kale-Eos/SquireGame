@@ -118,7 +118,6 @@ public class PlayerControllerV3 : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
 
         anim.SetFloat("speed", Mathf.Abs(horizontalInput));
-        audioManager.PlaySound("Walking");
 
         //What actually gets the player moving.
         //Horizontal input is 1 if going right and -1 if going left. It is then multiplied by the movementSpeed variable. 
@@ -143,7 +142,7 @@ public class PlayerControllerV3 : MonoBehaviour
         if (isGrounded == true || isOnGroundWallLayer == true || isGroundedOnWall == true)
         {
             extraJumps = extraJumpsAmount;
-            
+            anim.SetBool("jumping", false);
         }
 
         //If the player jumps and if they have extra jumps, allow them to jump at a height determined by the jumpHeight variable.
@@ -155,10 +154,9 @@ public class PlayerControllerV3 : MonoBehaviour
         }
         else if (Input.GetButtonDown("Jump") && extraJumps == 0 && isGrounded == true || Input.GetButtonDown("Jump") && extraJumps == 0 && isOnGroundWallLayer == true)
         {
-            isJumping = true;
+            isJumping = true;  
             jumpTimeCounter = jumpTime;
             rb.velocity = Vector2.up * jumpHeight;
-            anim.SetBool("jumping", true);
         }
 
         //Holding jump allows you to jump higher as long as the isJumping value is true.
@@ -166,9 +164,9 @@ public class PlayerControllerV3 : MonoBehaviour
         {
             if (jumpTimeCounter > 0)
             {
+                anim.SetBool("jumping", true);
                 rb.velocity = Vector2.up * jumpHeight;
                 jumpTimeCounter -= Time.deltaTime;
-                anim.SetBool("jumping", true);
             }
             else
             {
