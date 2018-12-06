@@ -23,9 +23,14 @@ public class Health : MonoBehaviour {
 
     GameOver GamesOver;
 
+    AudioManager audioManager;
+
 	// Use this for initialization
-	void Start () {
-		Hearts = 3;
+	void Start ()
+    {
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+
+        Hearts = 3;
 		Hearts3.SetActive (true);
 		invincible = false;
 	}
@@ -39,16 +44,19 @@ public class Health : MonoBehaviour {
 		} 
 
 		/* When the number of hearts equals 1, hearts1 appears */
-		else if (Hearts == 1) {
+		else if (Hearts == 1)
+        {
 			Hearts3.SetActive (false);
 			Hearts2.SetActive (false);
 			Hearts1.SetActive (true);
 		}
         
 		/* When the number of hearts equals 2, hearts2 appears */
-		else if (Hearts == 2) {
+		else if (Hearts == 2)
+        {
 			Hearts3.SetActive (false);
-			Hearts2.SetActive (true);
+            audioManager.PlaySound("Hit");
+            Hearts2.SetActive (true);
 		} 
 	}
 
@@ -59,8 +67,7 @@ public class Health : MonoBehaviour {
 			/* If the squire touches anything with the tag "harmful" while he isn't invincible, he will take damage */
 			if (collision.gameObject.CompareTag("harmful"))
             {
-				/* Paco you can add in the animation right here */
-				Hearts = Hearts - 1;
+                Hearts = Hearts - 1;
 				invincible = true;
 				/* Invulnerability period ends after 0.5 seconds*/
 				Invoke("notInvincible", 0.5f);

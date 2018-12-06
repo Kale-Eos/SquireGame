@@ -41,6 +41,8 @@ public class GameOver : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
         audioManager.PlaySound("Return2Game_UI");
+        audioManager.StopSound("Tutorial_BGM");
+        audioManager.PlaySound("Tutorial_BGM");
     }
 
     public void ActivateUI()

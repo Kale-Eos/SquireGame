@@ -74,6 +74,8 @@ public class PlayerControllerV3 : MonoBehaviour
             Debug.LogError("No AudioManager Found");
         }
 
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+
         //Used to that it's up to the inspector to determine how many extra jumps there are.
         extraJumps = extraJumpsAmount;
 
@@ -116,6 +118,7 @@ public class PlayerControllerV3 : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
 
         anim.SetFloat("speed", Mathf.Abs(horizontalInput));
+        audioManager.PlaySound("Walking");
 
         //What actually gets the player moving.
         //Horizontal input is 1 if going right and -1 if going left. It is then multiplied by the movementSpeed variable. 
