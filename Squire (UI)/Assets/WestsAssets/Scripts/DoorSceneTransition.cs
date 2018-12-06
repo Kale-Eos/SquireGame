@@ -7,6 +7,8 @@ public class DoorSceneTransition : MonoBehaviour
     private PlayerControllerV3 PCV3Script;
     private ItemPickup IPScript;
 
+    AudioManager audioManager;
+
     [Space]
     [Header("Door Settings:")]
     public GameObject openDoor;
@@ -26,19 +28,23 @@ public class DoorSceneTransition : MonoBehaviour
 
         //References the ItemPickup script so that I can use the boolean to check if the item has been collected.
         IPScript = GameObject.Find("DialogueSpot3/ItemCollect").GetComponent<ItemPickup>();
+
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
         //If the player is next to the door, presses the interaction key, and the item has been picked up, then the closed door gameobject will be disabled and the open door gameobject will be enabled.
-        if (Input.GetButtonDown("Interaction") && PCV3Script.isNextToInteractable == true && IPScript.pickedUp == true|| Input.GetButtonDown("Interaction") && PCV3Script.isNextToInteractable2 == true && IPScript.pickedUp == true)
+        if (Input.GetButtonDown("Interaction") && PCV3Script.isNextToInteractable == true && IPScript.pickedUp == true || Input.GetButtonDown("Interaction") && PCV3Script.isNextToInteractable2 == true && IPScript.pickedUp == true)
         {
             openDoor.SetActive(true);
             openDoorTeleport.SetActive(true);
+            audioManager.PlaySound("LockedDoor");
             gameObject.SetActive(false);
-            //DOOR OPEN SOUND WOULD BE CODED HERE. KEEP IN MIND THAT THE GAMEOBJECT THIS SCRIPT IS ATTACHED TO TURNS OFF ONCE THE PLAYER INTERACTS WITH THE DOOR.
         }
+
         //If the player is next to the door, presses the interaction key, but has not yet collected the item, then Squire will say a line.
         else if (Input.GetButtonDown("Interaction") && PCV3Script.isNextToInteractable == true && IPScript.pickedUp != true && textEnabled != true|| Input.GetButtonDown("Interaction") && PCV3Script.isNextToInteractable2 == true && IPScript.pickedUp != true && textEnabled != true)
         {

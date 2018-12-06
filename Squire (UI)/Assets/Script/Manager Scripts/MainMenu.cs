@@ -40,7 +40,6 @@ public class MainMenu : MonoBehaviour
     public void InGameResume()
     {
         audioManager.PlaySound("Return2Game_UI");
-
     }
 
     public void PlayTutorial()
@@ -73,18 +72,10 @@ public class MainMenu : MonoBehaviour
         audioManager.StopSound("Music");            // Stops main menu music
     }
 
-    public void CreditsTransition()
-    {
-        audioManager.StopSound("Music");            // Stops main menu music
-        audioManager.StopSound("Tutorial_BGM");     // Stops tutorial music
-        audioManager.StopSound("Level1_BGM");       // Stops level 1 music
-        audioManager.PlaySound("Credits_BGM");      // Plays Credits_BGM
-    }
-
-
     public void BackToMainMenu()
     {
-        SceneManager.LoadScene("Title Scene");      // Reverses the the scene change to go back to Title Scene
+        levelChanger2.FadeToLevel(0);
+        //SceneManager.LoadScene("Title Scene");      // Reverses the the scene change to go back to Title Scene
         audioManager.StopSound("Tutorial_BGM");     // Stop Tutorial Music
         audioManager.StopSound("Level1_BGM");       // Stops level 1 music
         audioManager.PlaySound("Music");            // Restarts main menu music
