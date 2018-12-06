@@ -6,10 +6,16 @@ public class DoorSceneTransition : MonoBehaviour
 {
     private PlayerControllerV3 PCV3Script;
     private ItemPickup IPScript;
+
+    [Space]
+    [Header("Door Settings:")]
     public GameObject openDoor;
     public GameObject openDoorTeleport;
 
+    [Space]
+    [Header("Dialogue Settings:")]
     public GameObject dialogueText5;
+    public GameObject textBox;
     private bool textEnabled;
 
     // Use this for initialization
@@ -30,19 +36,15 @@ public class DoorSceneTransition : MonoBehaviour
         {
             openDoor.SetActive(true);
             openDoorTeleport.SetActive(true);
-            //openDoor.SceneTransition.SetActive(true);
             gameObject.SetActive(false);
+            //DOOR OPEN SOUND WOULD BE CODED HERE. KEEP IN MIND THAT THE GAMEOBJECT THIS SCRIPT IS ATTACHED TO TURNS OFF ONCE THE PLAYER INTERACTS WITH THE DOOR.
         }
-
         //If the player is next to the door, presses the interaction key, but has not yet collected the item, then Squire will say a line.
-        else if (Input.GetButtonDown("Interaction") && PCV3Script.isNextToInteractable != true && IPScript.pickedUp == true || Input.GetButtonDown("Interaction") && PCV3Script.isNextToInteractable2 == true && IPScript.pickedUp != true)
+        else if (Input.GetButtonDown("Interaction") && PCV3Script.isNextToInteractable == true && IPScript.pickedUp != true && textEnabled != true|| Input.GetButtonDown("Interaction") && PCV3Script.isNextToInteractable2 == true && IPScript.pickedUp != true && textEnabled != true)
         {
             dialogueText5.gameObject.SetActive(true);
+            textBox.gameObject.SetActive(true);
             textEnabled = true;
-        }
-
-        if (textEnabled == true)
-        {
             StartCoroutine(TextDuration());
         }
     }
@@ -51,6 +53,15 @@ public class DoorSceneTransition : MonoBehaviour
     {
         yield return new WaitForSeconds(4.0f);
         dialogueText5.gameObject.SetActive(false);
+        textBox.gameObject.SetActive(false);
+        textEnabled = false;
+    }
+
+    //When called, ends the dialogue early.
+    public void EndTextEarly()
+    {
+        dialogueText5.gameObject.SetActive(false);
+        textBox.gameObject.SetActive(false);
         textEnabled = false;
     }
 
