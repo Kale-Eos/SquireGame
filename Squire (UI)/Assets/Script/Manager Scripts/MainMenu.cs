@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
 
     AudioManager audioManager;
 
-    public Animator animator;
+    private LevelChanger2 levelChanger2;
 
     void Start()
     {
@@ -22,6 +22,8 @@ public class MainMenu : MonoBehaviour
         {
             Debug.LogError("No AudioManager Found");
         }
+
+        levelChanger2 = GameObject.Find("LevelChanger").GetComponent<LevelChanger2>();
     }
 
     public void OnMouseOver()
@@ -43,7 +45,8 @@ public class MainMenu : MonoBehaviour
 
     public void PlayTutorial()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);       // loads onto the tutorial scene
+        levelChanger2.FadeToLevel(1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);       // loads onto the tutorial scene
         audioManager.PlaySound("Tutorial_BGM");                                     // Plays Tutorial_BGM
         audioManager.StopSound("Music");                                            // Stops main menu music
     }
@@ -64,10 +67,10 @@ public class MainMenu : MonoBehaviour
 
     public void PlayCredits()
     {
+        levelChanger2.FadeToLevel(3);
         //SceneManager.LoadScene("Credits Scene");    // loads onto the Credits scene
+        audioManager.PlaySound("Credits_BGM");       // Plays credit music
         audioManager.StopSound("Music");            // Stops main menu music
-        audioManager.StopSound("Tutorial_BGM");     // Stops tutorial music
-        audioManager.StopSound("Level1_BGM");       // Stops level 1 music
     }
 
     public void CreditsTransition()

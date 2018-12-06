@@ -19,7 +19,7 @@ public class GameTransition : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-			levelChanger2.FadeToLevel(4);
+			levelChanger2.FadeToLevel(3);
 			player.GetComponent<PlayerControllerV3>().enabled = false;
         }
     }
