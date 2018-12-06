@@ -11,6 +11,7 @@ public class GameTransition : MonoBehaviour
 	void Start()
     {
 		levelChanger2 = GameObject.Find("LevelChanger").GetComponent<LevelChanger2> ();
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 	}
 
 
@@ -20,6 +21,9 @@ public class GameTransition : MonoBehaviour
         if (collision.tag == "Player")
         {
 			levelChanger2.FadeToLevel(3);
+            audioManager.StopSound("Music");
+            audioManager.StopSound("Tutorial_BGM");
+            audioManager.PlaySound("Credits_BGM");
 			player.GetComponent<PlayerControllerV3>().enabled = false;
         }
     }
