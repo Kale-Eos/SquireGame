@@ -2748,7 +2748,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 1
-  GameOverUI: {fileID: 0}
+  player: {fileID: 1357493657}
+  GameOverUI: {fileID: 1305707384}
 --- !u!1 &636496972
 GameObject:
   m_ObjectHideFlags: 0
