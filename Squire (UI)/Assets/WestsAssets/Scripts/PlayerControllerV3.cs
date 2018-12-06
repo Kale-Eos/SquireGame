@@ -25,6 +25,8 @@ public class PlayerControllerV3 : MonoBehaviour
 
 	public GameObject Greaves2;
 
+    public Animator anim;
+
     [Space]
     [Header("Ground Check Settings:")]
     public bool isGrounded;
@@ -113,6 +115,8 @@ public class PlayerControllerV3 : MonoBehaviour
         //Sets horizontalInput to horizontal movement, or left and right movement
         horizontalInput = Input.GetAxisRaw("Horizontal");
 
+        anim.SetFloat("speed", Mathf.Abs(horizontalInput));
+
         //What actually gets the player moving.
         //Horizontal input is 1 if going right and -1 if going left. It is then multiplied by the movementSpeed variable. 
         //Since the y-axis isn't affected, y on the Vector2 is just set to rb.velocity.y
@@ -151,6 +155,7 @@ public class PlayerControllerV3 : MonoBehaviour
             isJumping = true;
             jumpTimeCounter = jumpTime;
             rb.velocity = Vector2.up * jumpHeight;
+            anim.SetBool("jumping", true);
         }
 
         //Holding jump allows you to jump higher as long as the isJumping value is true.
@@ -160,6 +165,7 @@ public class PlayerControllerV3 : MonoBehaviour
             {
                 rb.velocity = Vector2.up * jumpHeight;
                 jumpTimeCounter -= Time.deltaTime;
+                anim.SetBool("jumping", true);
             }
             else
             {
