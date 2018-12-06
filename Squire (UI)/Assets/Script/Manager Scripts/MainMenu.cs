@@ -64,7 +64,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayCredits()
     {
-        SceneManager.LoadScene("Credits Scene");    // loads onto the Credits scene
+        //SceneManager.LoadScene("Credits Scene");    // loads onto the Credits scene
         audioManager.StopSound("Music");            // Stops main menu music
         audioManager.StopSound("Tutorial_BGM");     // Stops tutorial music
         audioManager.StopSound("Level1_BGM");       // Stops level 1 music

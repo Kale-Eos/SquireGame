@@ -6,7 +6,7 @@ public class GameTransition : MonoBehaviour
 {
     AudioManager audioManager;
 	private LevelChanger2 levelChanger2;
-	public GameObject player;
+	public GameObject player; 
 
 	void Start() {
 		levelChanger2 = GameObject.Find("LevelChanger").GetComponent<LevelChanger2> ();
@@ -18,8 +18,8 @@ public class GameTransition : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-			levelChanger2.FadeToLevel (4);
-			player.GetComponent<PlayerControllerV3> ().enabled = false;
+			levelChanger2.FadeToLevel (3);
+            player.GetComponent<PlayerControllerV3> ().enabled = false;
             //SceneManager.LoadScene("Credits Scene");
         }
     }
