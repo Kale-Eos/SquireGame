@@ -12,7 +12,7 @@ public class GameOver : MonoBehaviour
     bool gameEnded = false;
 
     public float delay = 1f;
-    private float delay2 = 0.1f;
+    private float delay2 = 0.2f;
 
     public GameObject player;
 

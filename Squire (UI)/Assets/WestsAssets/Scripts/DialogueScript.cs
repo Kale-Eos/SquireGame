@@ -21,12 +21,14 @@ public class DialogueScript : MonoBehaviour
 
     private float movementSpeedReset;
 
-    Animation anim;
+    public Animator anim;
 
     void Start()
     {
         //References the PlayerControllerV3 Script by finding the GameObject with the "Player" tag so that components from the Player GameObject can be used.
         PCV3Script = GameObject.FindWithTag("Player").GetComponent<PlayerControllerV3>();
+
+        anim = GameObject.FindWithTag("Player").GetComponent<Animator>();
 
         //References the DoorSceneTransition Script by finding the ClosedDoor GameObject.
         DSTScript = GameObject.Find("ClosedDoor").GetComponent<DoorSceneTransition>();
@@ -41,6 +43,8 @@ public class DialogueScript : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            anim.SetBool("jumping", false);
+            anim.SetFloat("speed", 0.0f);
             DSTScript.EndTextEarly();                    //If there's dialogue from the Squire saying "I can't leave without the Knight's greaves." currently playing, it'll be ended early.
             PCV3Script.movementSpeed = 0.0f;
             if (PCV3Script.movementSpeed == 0.0f)
