@@ -10,6 +10,7 @@ TagManager:
   - LevelButton
   - InvisibleDoor
   - harmful
+  - Dialogue
   layers:
   - Default
   - TransparentFX

@@ -915,7 +915,7 @@ GameObject:
   - component: {fileID: 316682872}
   m_Layer: 0
   m_Name: DialogueSpot3/ItemCollect
-  m_TagString: Untagged
+  m_TagString: Dialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1031,8 +1031,10 @@ MonoBehaviour:
   dialogueDuration: 4.5
   dialogueText: {fileID: 2120451513}
   textBox: {fileID: 291258896}
+  readingDialogue: 0
   player: {fileID: 1357493657}
   screenDim: {fileID: 354786320}
+  anim: {fileID: 0}
 --- !u!1 &320537447
 GameObject:
   m_ObjectHideFlags: 0
@@ -2035,7 +2037,7 @@ GameObject:
   - component: {fileID: 549229284}
   m_Layer: 0
   m_Name: DialogueSpot4
-  m_TagString: Untagged
+  m_TagString: Dialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2067,8 +2069,10 @@ MonoBehaviour:
   dialogueDuration: 4
   dialogueText: {fileID: 530881101}
   textBox: {fileID: 291258896}
+  readingDialogue: 0
   player: {fileID: 1357493657}
   screenDim: {fileID: 354786320}
+  anim: {fileID: 0}
 --- !u!61 &549229285
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4331,6 +4335,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 945430548}
+  - component: {fileID: 945430549}
   m_Layer: 0
   m_Name: Dialogue
   m_TagString: Untagged
@@ -4356,6 +4361,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &945430549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 945430547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac0300aa5e641a24b9716fc9a0ab6692, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueDuration: 0
+  dialogueText: {fileID: 0}
+  textBox: {fileID: 0}
+  readingDialogue: 0
+  player: {fileID: 0}
+  screenDim: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!1 &952410149
 GameObject:
   m_ObjectHideFlags: 0
@@ -6530,7 +6553,7 @@ GameObject:
   - component: {fileID: 1232621670}
   m_Layer: 0
   m_Name: DialogueSpot2
-  m_TagString: Untagged
+  m_TagString: Dialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6549,8 +6572,10 @@ MonoBehaviour:
   dialogueDuration: 5
   dialogueText: {fileID: 2102873021}
   textBox: {fileID: 291258896}
+  readingDialogue: 0
   player: {fileID: 1357493657}
   screenDim: {fileID: 354786320}
+  anim: {fileID: 0}
 --- !u!61 &1232621671
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7315,6 +7340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 7
   jumpHeight: 10
+  horizontalInput: 0
   extraJumpsAmount: 0
   jumpTime: 0.25
   Greaves2: {fileID: 1836122852}
@@ -8104,7 +8130,7 @@ GameObject:
   - component: {fileID: 1571013962}
   m_Layer: 0
   m_Name: DialogueSpot1
-  m_TagString: Untagged
+  m_TagString: Dialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8207,8 +8233,10 @@ MonoBehaviour:
   dialogueDuration: 4
   dialogueText: {fileID: 390106553}
   textBox: {fileID: 291258896}
+  readingDialogue: 0
   player: {fileID: 1357493657}
   screenDim: {fileID: 354786320}
+  anim: {fileID: 0}
 --- !u!1 &1581664303
 GameObject:
   m_ObjectHideFlags: 0
