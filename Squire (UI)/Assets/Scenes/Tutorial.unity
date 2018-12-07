@@ -1031,7 +1031,6 @@ MonoBehaviour:
   dialogueDuration: 4.5
   dialogueText: {fileID: 2120451513}
   textBox: {fileID: 291258896}
-  readingDialogue: 0
   player: {fileID: 1357493657}
   screenDim: {fileID: 354786320}
   anim: {fileID: 0}
@@ -2069,7 +2068,6 @@ MonoBehaviour:
   dialogueDuration: 4
   dialogueText: {fileID: 530881101}
   textBox: {fileID: 291258896}
-  readingDialogue: 0
   player: {fileID: 1357493657}
   screenDim: {fileID: 354786320}
   anim: {fileID: 0}
@@ -4375,7 +4373,6 @@ MonoBehaviour:
   dialogueDuration: 0
   dialogueText: {fileID: 0}
   textBox: {fileID: 0}
-  readingDialogue: 0
   player: {fileID: 0}
   screenDim: {fileID: 0}
   anim: {fileID: 0}
@@ -6572,7 +6569,6 @@ MonoBehaviour:
   dialogueDuration: 5
   dialogueText: {fileID: 2102873021}
   textBox: {fileID: 291258896}
-  readingDialogue: 0
   player: {fileID: 1357493657}
   screenDim: {fileID: 354786320}
   anim: {fileID: 0}
@@ -8233,7 +8229,6 @@ MonoBehaviour:
   dialogueDuration: 4
   dialogueText: {fileID: 390106553}
   textBox: {fileID: 291258896}
-  readingDialogue: 0
   player: {fileID: 1357493657}
   screenDim: {fileID: 354786320}
   anim: {fileID: 0}

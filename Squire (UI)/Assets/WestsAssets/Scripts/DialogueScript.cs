@@ -12,7 +12,6 @@ public class DialogueScript : MonoBehaviour
     public float dialogueDuration;
     public GameObject dialogueText;
     public GameObject textBox;
-    public bool readingDialogue = false;
 
     [Space]
     [Header("Other:")]
@@ -44,14 +43,11 @@ public class DialogueScript : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            anim.SetBool("jumping", false);
-            anim.SetFloat("speed", 0.0f);
+            player.GetComponent<Animator>().enabled = false;
 
             DSTScript.EndTextEarly();                    //If there's dialogue from the Squire saying "I can't leave without the Knight's greaves." currently playing, it'll be ended early.
 
             PCV3Script.movementSpeed = 0.0f;
-
-            readingDialogue = true;
 
             dialogueText.gameObject.SetActive(true);
             textBox.gameObject.SetActive(true);
@@ -72,6 +68,7 @@ public class DialogueScript : MonoBehaviour
         yield return new WaitForSeconds(dialogueDuration);
         PCV3Script.movementSpeed = movementSpeedReset;
         player.GetComponent<PlayerControllerV3>().enabled = true;
+        player.GetComponent<Animator>().enabled = true;
 
         dialogueText.gameObject.SetActive(false);
         textBox.gameObject.SetActive(false);
@@ -79,7 +76,6 @@ public class DialogueScript : MonoBehaviour
 
         screenDim.gameObject.SetActive(false);
 
-        readingDialogue = false;
 
     }
 

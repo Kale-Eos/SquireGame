@@ -60,6 +60,7 @@ public class GameOver : MonoBehaviour
     public void PlayerControllerOff()
     {
         player.GetComponent<PlayerControllerV3>().enabled = false;
+        player.GetComponent<Animator>().enabled = false;
     }
 
 }

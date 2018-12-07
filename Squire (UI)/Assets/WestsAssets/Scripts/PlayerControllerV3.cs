@@ -11,7 +11,6 @@ public class PlayerControllerV3 : MonoBehaviour
     public float movementSpeed;
     public float jumpHeight;
     public float horizontalInput;
- 
 
     private int extraJumps;
     public int extraJumpsAmount;
@@ -66,7 +65,6 @@ public class PlayerControllerV3 : MonoBehaviour
     [Header("Other:")]
     public GameObject TriggerDoor;    // sets TriggerDoor object
     AudioManager audioManager;      // audio manager is now accessed
-    private DialogueScript DS;  //DialogueScript is now accessed
 
     void Start()
     {
@@ -77,8 +75,6 @@ public class PlayerControllerV3 : MonoBehaviour
         }
 
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
-
-        DS = GameObject.Find("Dialogue").GetComponent<DialogueScript>();
 
         //Used to that it's up to the inspector to determine how many extra jumps there are.
         extraJumps = extraJumpsAmount;
@@ -120,15 +116,8 @@ public class PlayerControllerV3 : MonoBehaviour
         isNextToInteractable2 = Physics2D.OverlapCircle(interactableCheck2.position, checkRadiusInteractable, interactableLayer);
 
         //Sets horizontalInput to horizontal movement, or left and right movement
-        if (DS.readingDialogue == false)
-        {
-            EnablehorizontalInput();
-            anim.SetFloat("speed", Mathf.Abs(horizontalInput));
-        }
-        else
-        {
-            DisablehorizontalInput();
-        }
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        anim.SetFloat("speed", Mathf.Abs(horizontalInput));
         
 
 
@@ -151,10 +140,6 @@ public class PlayerControllerV3 : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            DisablehorizontalInput();
-        }
         //Resets amount of extra jumps a player has once they touch the ground.
         if (isGrounded == true || isOnGroundWallLayer == true || isGroundedOnWall == true)
         {
@@ -232,20 +217,12 @@ public class PlayerControllerV3 : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         // targests only PickUps
-		if (other.gameObject.CompareTag ("PickUps")) {
-			// PickUp is destroyed and makes sound
-			other.gameObject.SetActive (false);
-			Greaves2.SetActive (true);
-			audioManager.PlaySound ("PickupSound");      // plays PickupSound.wav
-		} 
-    }
-    public void DisablehorizontalInput()
-    {
-        horizontalInput = 0.0f;
-    }
-
-    public void EnablehorizontalInput()
-    {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
+        if (other.gameObject.CompareTag("PickUps"))
+        {
+            // PickUp is destroyed and makes sound
+            other.gameObject.SetActive(false);
+            Greaves2.SetActive(true);
+            audioManager.PlaySound("PickupSound");      // plays PickupSound.wav
+        }
     }
 }
