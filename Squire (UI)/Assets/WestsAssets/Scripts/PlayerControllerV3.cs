@@ -118,7 +118,7 @@ public class PlayerControllerV3 : MonoBehaviour
         //Sets horizontalInput to horizontal movement, or left and right movement
         horizontalInput = Input.GetAxisRaw("Horizontal");
         anim.SetFloat("speed", Mathf.Abs(horizontalInput));
-        
+
 
 
         //What actually gets the player moving.

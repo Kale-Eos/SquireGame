@@ -21,13 +21,15 @@ public class DialogueScript : MonoBehaviour
 
     private float movementSpeedReset;
 
-    public Animator anim;
+    private Animator anim;
+
 
     void Start()
     {
         //References the PlayerControllerV3 Script by finding the GameObject with the "Player" tag so that components from the Player GameObject can be used.
         PCV3Script = GameObject.FindWithTag("Player").GetComponent<PlayerControllerV3>();
 
+        //Now able to access the Player's animator.
         anim = GameObject.FindWithTag("Player").GetComponent<Animator>();
 
         //References the DoorSceneTransition Script by finding the ClosedDoor GameObject.
@@ -38,13 +40,11 @@ public class DialogueScript : MonoBehaviour
     }
 
 
-    //When the player comes in contact with the invisible sprite, he'll stop moving and a dialogue will pop up for a set amount of time.
+    //When the player comes in contact with the invisible sprite, he'll stop moving and a dialogue will pop up for a set amount of time. Animation will also get set to Idle and then turned off.
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            player.GetComponent<Animator>().enabled = false;
-
             DSTScript.EndTextEarly();                    //If there's dialogue from the Squire saying "I can't leave without the Knight's greaves." currently playing, it'll be ended early.
 
             PCV3Script.movementSpeed = 0.0f;
@@ -82,7 +82,17 @@ public class DialogueScript : MonoBehaviour
     //This function will wait an extremely short amount of time before disabling the PlayerController script, otherwise he'd keep moving.
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
+        anim.Play("Idle");
         player.GetComponent<PlayerControllerV3>().enabled = false;
+        StartCoroutine(Wait2());
+    }
+
+    //Calls After Wait() in order to ensure that the Squire is set to the Idle animation before the animation gets turned off.
+    IEnumerator Wait2()
+    {
+        anim.Play("Idle");
+        yield return new WaitForSeconds(0.01f);
+        player.GetComponent<Animator>().enabled = false;
     }
 }

@@ -6,11 +6,16 @@ public class GameTransition : MonoBehaviour
 {
     AudioManager audioManager;
 	private LevelChanger2 levelChanger2;
-	public GameObject player;
+    private PlayerControllerV3 PCV3;
+    public GameObject player;
+    private Animator anim;
 
 	void Start()
     {
-		levelChanger2 = GameObject.Find("LevelChanger").GetComponent<LevelChanger2> ();
+        //Access multiple different scripts and components here
+        PCV3 = GameObject.FindWithTag("Player").GetComponent<PlayerControllerV3>();
+        anim = GameObject.FindWithTag("Player").GetComponent<Animator>();
+        levelChanger2 = GameObject.Find("LevelChanger").GetComponent<LevelChanger2> ();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 	}
 
@@ -24,7 +29,30 @@ public class GameTransition : MonoBehaviour
             audioManager.StopSound("Music");
             audioManager.StopSound("Tutorial_BGM");
             audioManager.PlaySound("Credits_BGM");
-			player.GetComponent<PlayerControllerV3>().enabled = false;
+            DisablePCV3();
+            //Invoke("StopAnimation", 0.1f);
         }
     }
+    //private void StopAnimation()
+    //{
+    //    EnablePCV3();
+    //    PCV3.movementSpeed = 0;
+    //    Invoke("DisablePCV3", 0.01f);
+    //    Invoke("Idle", 0.02f);
+    //}
+
+    private void EnablePCV3()
+    {
+        player.GetComponent<PlayerControllerV3>().enabled = true;
+    }
+
+    private void DisablePCV3()
+    {
+        player.GetComponent<PlayerControllerV3>().enabled = false;
+    }
+
+    //private void IdleAnim()
+    //{
+    //    anim.Play("Idle");
+    //}
 }

@@ -12,22 +12,31 @@ public class GameOver : MonoBehaviour
     bool gameEnded = false;
 
     public float delay = 1f;
-    private float delay2 = 0.2f;
 
     public GameObject player;
 
     public GameObject GameOverUI;
 
-    Animation anim;
+    private bool playerControllerIsOff = false;
+
+    private Animator anim;
 
 	void Start ()
     {
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         PCV3 = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerV3>();
+        anim = GameObject.FindWithTag("Player").GetComponent<Animator>();
 
     }
 
-	public void EndGame()
+    private void Update()
+    {
+        if (playerControllerIsOff == true)
+        {
+            AnimatorOff();
+        }
+    }
+    public void EndGame()
     {
 
         if (gameEnded == false)                 // checks if game ended
@@ -54,12 +63,18 @@ public class GameOver : MonoBehaviour
     public void FreezePlayer()
     {
         PCV3.movementSpeed = 0;
-        Invoke("PlayerControllerOff", delay2);   //Waits 0.1 seconds and then disables PlayerControllerV3. It's coded this way because otherwise the player would continue sliding.
+        Invoke("PlayerControllerOff", 0.2f);   //Waits 0.1 seconds and then disables PlayerControllerV3. It's coded this way because otherwise the player would continue sliding.
     }
 
     public void PlayerControllerOff()
     {
+        anim.Play("Idle");
+        playerControllerIsOff = true;
         player.GetComponent<PlayerControllerV3>().enabled = false;
+    }
+
+    public void AnimatorOff()
+    {
         player.GetComponent<Animator>().enabled = false;
     }
 
